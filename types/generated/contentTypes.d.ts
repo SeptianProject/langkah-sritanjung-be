@@ -888,13 +888,14 @@ export interface ApiKategoriWisataKategoriWisata extends Schema.CollectionType {
     singularName: 'kategori-wisata';
     pluralName: 'kategori-wisatas';
     displayName: 'Kategori Wisata';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
-    uuid: Attribute.UID;
+    slug: Attribute.UID<'api::kategori-wisata.kategori-wisata', 'name'>;
     destinasi_wisatas: Attribute.Relation<
       'api::kategori-wisata.kategori-wisata',
       'oneToMany',
