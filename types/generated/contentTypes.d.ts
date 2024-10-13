@@ -931,7 +931,7 @@ export interface ApiTransportasiTransportasi extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    name: Attribute.String;
     description: Attribute.Text;
     address: Attribute.String;
     noTelp: Attribute.String;
@@ -943,6 +943,7 @@ export interface ApiTransportasiTransportasi extends Schema.CollectionType {
     >;
     image: Attribute.Media<'images'>;
     url: Attribute.String;
+    slug: Attribute.UID<'api::transportasi.transportasi', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
