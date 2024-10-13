@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_layouts_recomendation_sections",
+  "info": {
+    "displayName": "Recomendation Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.card"
+    }
+  }
+}

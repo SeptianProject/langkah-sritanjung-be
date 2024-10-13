@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kategori_wisatas",
+  "info": {
+    "singularName": "kategori-wisata",
+    "pluralName": "kategori-wisatas",
+    "displayName": "Kategori Wisata"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "uid"
+    },
+    "destinasi_wisatas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::destinasi-wisata.destinasi-wisata",
+      "mappedBy": "kategori_wisata"
+    }
+  }
+}

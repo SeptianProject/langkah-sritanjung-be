@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transportasis",
+  "info": {
+    "singularName": "transportasi",
+    "pluralName": "transportasis",
+    "displayName": "Transportasi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "address": {
+      "type": "string"
+    },
+    "noTelp": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "destinasi_wisata": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::destinasi-wisata.destinasi-wisata",
+      "inversedBy": "transportasis"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

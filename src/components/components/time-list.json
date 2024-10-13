@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_time_lists",
+  "info": {
+    "displayName": "time-list"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "text"
+    }
+  }
+}

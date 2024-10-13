@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layouts_main_sections",
+  "info": {
+    "displayName": "Main Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.time-list"
+    }
+  }
+}

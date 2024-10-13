@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "destinasi_wisatas",
+  "info": {
+    "singularName": "destinasi-wisata",
+    "pluralName": "destinasi-wisatas",
+    "displayName": "Destinasi Wisata",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layouts.hero-section"
+    },
+    "main": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layouts.main-section"
+    },
+    "kategori_wisata": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::kategori-wisata.kategori-wisata",
+      "inversedBy": "destinasi_wisatas"
+    },
+    "name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "json"
+    },
+    "transportasis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transportasi.transportasi",
+      "mappedBy": "destinasi_wisata"
+    },
+    "homestays": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::homestay.homestay",
+      "mappedBy": "destinasi_wisata"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}
