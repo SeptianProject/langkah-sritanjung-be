@@ -5,6 +5,7 @@
  */
 
 const populate = {
+  destinasi_wisata: true,
   image: {
     fields: ["url", "name", "alternativeText"]
   }

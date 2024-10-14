@@ -852,7 +852,7 @@ export interface ApiHomestayHomestay extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    name: Attribute.String;
     description: Attribute.String;
     address: Attribute.String;
     noTelp: Attribute.String;
@@ -864,6 +864,7 @@ export interface ApiHomestayHomestay extends Schema.CollectionType {
     >;
     url: Attribute.String;
     image: Attribute.Media<'images'>;
+    slug: Attribute.UID;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
