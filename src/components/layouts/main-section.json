@@ -9,7 +9,12 @@
     "title": {
       "type": "string"
     },
-    "list": {
+    "timelist": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.time-list"
+    },
+    "actions": {
       "type": "component",
       "repeatable": true,
       "component": "components.time-list"

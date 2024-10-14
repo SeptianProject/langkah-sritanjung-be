@@ -18,19 +18,12 @@ const populate = {
   },
   main: {
     populate: {
-      list: {
-        populate: true,
-      }
+      timelist: true,
+      actions: true,
     }
   },
   transportasis: {
     populate: true,
-    // {
-      // image: {
-      //   populate: true,
-      //   fields: ["name", "alternativeText", "url"]
-      // }
-    // }
   },
   homestays: {
     populate: {

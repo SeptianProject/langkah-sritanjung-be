@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layouts_action_sections",
+  "info": {
+    "displayName": "Action Section"
+  },
+  "options": {},
+  "attributes": {
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.time-list"
+    },
+    "Header": {
+      "type": "string",
+      "default": "Hal Yang Bisa Kamu Lakukan Di Tempat Ini"
+    }
+  }
+}

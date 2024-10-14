@@ -19,7 +19,8 @@ export interface LayoutsMainSection extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    list: Attribute.Component<'components.time-list', true>;
+    timelist: Attribute.Component<'components.time-list', true>;
+    actions: Attribute.Component<'components.time-list', true>;
   };
 }
 
@@ -32,7 +33,19 @@ export interface LayoutsHeroSection extends Schema.Component {
   attributes: {
     title: Attribute.String;
     description: Attribute.String;
-    link: Attribute.Component<'components.link'>;
+    link: Attribute.Component<'components.link', true>;
+  };
+}
+
+export interface LayoutsActionSection extends Schema.Component {
+  collectionName: 'components_layouts_action_sections';
+  info: {
+    displayName: 'Action Section';
+  };
+  attributes: {
+    list: Attribute.Component<'components.time-list', true>;
+    Header: Attribute.String &
+      Attribute.DefaultTo<'Hal Yang Bisa Kamu Lakukan Di Tempat Ini'>;
   };
 }
 
@@ -40,10 +53,11 @@ export interface ComponentsTimeList extends Schema.Component {
   collectionName: 'components_components_time_lists';
   info: {
     displayName: 'time-list';
+    description: '';
   };
   attributes: {
-    heading: Attribute.String;
-    subHeading: Attribute.Text;
+    title: Attribute.String;
+    description: Attribute.String;
   };
 }
 
@@ -78,6 +92,7 @@ declare module '@strapi/types' {
       'layouts.recomendation-section': LayoutsRecomendationSection;
       'layouts.main-section': LayoutsMainSection;
       'layouts.hero-section': LayoutsHeroSection;
+      'layouts.action-section': LayoutsActionSection;
       'components.time-list': ComponentsTimeList;
       'components.link': ComponentsLink;
       'components.card': ComponentsCard;

@@ -14,7 +14,7 @@
     },
     "link": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "components.link"
     }
   }
