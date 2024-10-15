@@ -27,9 +27,9 @@
     "price": {
       "type": "string"
     },
-    "destinasi_wisata": {
+    "destinasi_wisatas": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::destinasi-wisata.destinasi-wisata",
       "inversedBy": "transportasis"
     },

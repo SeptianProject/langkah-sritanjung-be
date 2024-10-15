@@ -801,7 +801,6 @@ export interface ApiDestinasiWisataDestinasiWisata
     draftAndPublish: true;
   };
   attributes: {
-    hero: Attribute.Component<'layouts.hero-section'>;
     main: Attribute.Component<'layouts.main-section'>;
     kategori_wisata: Attribute.Relation<
       'api::destinasi-wisata.destinasi-wisata',
@@ -810,18 +809,18 @@ export interface ApiDestinasiWisataDestinasiWisata
     >;
     name: Attribute.String;
     location: Attribute.JSON;
+    image: Attribute.Media<'images'>;
+    slug: Attribute.UID<'api::destinasi-wisata.destinasi-wisata', 'name'>;
     transportasis: Attribute.Relation<
       'api::destinasi-wisata.destinasi-wisata',
-      'oneToMany',
+      'manyToMany',
       'api::transportasi.transportasi'
     >;
     homestays: Attribute.Relation<
       'api::destinasi-wisata.destinasi-wisata',
-      'oneToMany',
+      'manyToMany',
       'api::homestay.homestay'
     >;
-    image: Attribute.Media<'images'>;
-    slug: Attribute.UID<'api::destinasi-wisata.destinasi-wisata', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -857,9 +856,9 @@ export interface ApiHomestayHomestay extends Schema.CollectionType {
     address: Attribute.String;
     noTelp: Attribute.String;
     price: Attribute.String;
-    destinasi_wisata: Attribute.Relation<
+    destinasi_wisatas: Attribute.Relation<
       'api::homestay.homestay',
-      'manyToOne',
+      'manyToMany',
       'api::destinasi-wisata.destinasi-wisata'
     >;
     url: Attribute.String;
@@ -937,9 +936,9 @@ export interface ApiTransportasiTransportasi extends Schema.CollectionType {
     address: Attribute.String;
     noTelp: Attribute.String;
     price: Attribute.String;
-    destinasi_wisata: Attribute.Relation<
+    destinasi_wisatas: Attribute.Relation<
       'api::transportasi.transportasi',
-      'manyToOne',
+      'manyToMany',
       'api::destinasi-wisata.destinasi-wisata'
     >;
     image: Attribute.Media<'images'>;
