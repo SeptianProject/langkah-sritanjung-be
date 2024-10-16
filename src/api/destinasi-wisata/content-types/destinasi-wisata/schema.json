@@ -52,6 +52,12 @@
       "relation": "manyToMany",
       "target": "api::homestay.homestay",
       "mappedBy": "destinasi_wisatas"
+    },
+    "kuliners": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::kuliner.kuliner",
+      "mappedBy": "destinasi_wisatas"
     }
   }
 }

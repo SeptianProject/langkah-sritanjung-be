@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kuliners",
+  "info": {
+    "singularName": "kuliner",
+    "pluralName": "kuliners",
+    "displayName": "Kuliner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "address": {
+      "type": "text"
+    },
+    "noTelp": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "destinasi_wisatas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::destinasi-wisata.destinasi-wisata",
+      "inversedBy": "kuliners"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

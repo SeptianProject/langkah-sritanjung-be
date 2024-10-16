@@ -821,6 +821,11 @@ export interface ApiDestinasiWisataDestinasiWisata
       'manyToMany',
       'api::homestay.homestay'
     >;
+    kuliners: Attribute.Relation<
+      'api::destinasi-wisata.destinasi-wisata',
+      'manyToMany',
+      'api::kuliner.kuliner'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -919,6 +924,48 @@ export interface ApiKategoriWisataKategoriWisata extends Schema.CollectionType {
   };
 }
 
+export interface ApiKulinerKuliner extends Schema.CollectionType {
+  collectionName: 'kuliners';
+  info: {
+    singularName: 'kuliner';
+    pluralName: 'kuliners';
+    displayName: 'Kuliner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    address: Attribute.Text;
+    noTelp: Attribute.String;
+    price: Attribute.String;
+    destinasi_wisatas: Attribute.Relation<
+      'api::kuliner.kuliner',
+      'manyToMany',
+      'api::destinasi-wisata.destinasi-wisata'
+    >;
+    image: Attribute.Media<'images'>;
+    slug: Attribute.UID<'api::kuliner.kuliner', 'name'>;
+    url: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::kuliner.kuliner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::kuliner.kuliner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTransportasiTransportasi extends Schema.CollectionType {
   collectionName: 'transportasis';
   info: {
@@ -983,6 +1030,7 @@ declare module '@strapi/types' {
       'api::destinasi-wisata.destinasi-wisata': ApiDestinasiWisataDestinasiWisata;
       'api::homestay.homestay': ApiHomestayHomestay;
       'api::kategori-wisata.kategori-wisata': ApiKategoriWisataKategoriWisata;
+      'api::kuliner.kuliner': ApiKulinerKuliner;
       'api::transportasi.transportasi': ApiTransportasiTransportasi;
     }
   }
