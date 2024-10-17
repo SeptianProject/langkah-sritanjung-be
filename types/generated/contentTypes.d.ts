@@ -857,7 +857,7 @@ export interface ApiHomestayHomestay extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    description: Attribute.String;
+    description: Attribute.Text;
     address: Attribute.String;
     noTelp: Attribute.String;
     price: Attribute.String;
