@@ -10,36 +10,6 @@ const populate = {
     populate: true,
       fields: ["name", "alternativeText", "url"]
   },
-  // hero: {
-  //   populate: {
-  //     link: {
-  //     populate: true,
-  //     }
-  //   }
-  // },
-  // main: {
-  //   populate: {
-  //     list: {
-  //       populate: true,
-  //     }
-  //   }
-  // },
-  // transportasis: {
-  //   populate: {
-  //     image: {
-  //       populate: true,
-  //       fields: ["name", "alternativeText", "url"]
-  //     }
-  //   }
-  // },
-  // homestays: {
-  //   populate: {
-  //     image: {
-  //       populate: true,
-  //       fields: ["name", "alternativeText", "url"]
-  //     }
-  //   },
-  // }
 }
 
 module.exports = (config, { strapi }) => {

@@ -42,7 +42,7 @@ const populate = {
     populate: {
       image: {
         populate: true,
-        fields: ["name", "alternativeText", "url"]
+        fields: ["name", "url"]
       }
     }
   }
