@@ -70,6 +70,19 @@ module.exports = createCoreController('api::destinasi-wisata.destinasi-wisata'
         });
       }
 
+      if (sanitizeEntity.kuliners) {
+        sanitizeEntity.kuliners = sanitizeEntity.kuliners.map(kuliner => {
+          if (kuliner.image) {
+            kuliner.image = {
+              url: kuliner.image.url,
+              name: kuliner.image.name,
+              alternativeText: kuliner.image.alternativeText,
+            };
+          }
+          return kuliner;
+        });
+      }
+
       return this.transformResponse(sanitizeEntity);
     } catch (error) {
       strapi.log.error('Error fetching entity:', error);

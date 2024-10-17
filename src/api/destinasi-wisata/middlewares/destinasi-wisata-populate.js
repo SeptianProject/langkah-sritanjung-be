@@ -23,7 +23,12 @@ const populate = {
     }
   },
   transportasis: {
-    populate: true,
+    populate: {
+      image: {
+        populate: true,
+        fields: ["name", "alternativeText", "url"]
+      }
+    }
   },
   homestays: {
     populate: {
@@ -32,6 +37,14 @@ const populate = {
         fields: ["name", "alternativeText", "url"]
       }
     },
+  },
+  kuliners: {
+    populate: {
+      image: {
+        populate: true,
+        fields: ["name", "alternativeText", "url"]
+      }
+    }
   }
 }
 
