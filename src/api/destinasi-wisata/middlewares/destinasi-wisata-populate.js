@@ -7,12 +7,15 @@
 const populate = {
   image: {
     populate: true,
-      fields: ["name", "alternativeText", "url"]
+    fields: ["name", "alternativeText", "url"]
+  },
+  kategori_wisata: {
+    populate: true,
   },
   hero: {
     populate: {
       link: {
-      populate: true,
+        populate: true,
       }
     }
   },
@@ -54,7 +57,7 @@ module.exports = (config, { strapi }) => {
   return async (ctx, next) => {
     strapi.log.info('Populating query: ', ctx.query);
 
-    if(!ctx.query.populate) {
+    if (!ctx.query.populate) {
       ctx.query.populate = populate
     }
 
